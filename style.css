@@ -1,141 +1,4 @@
-html{
-font-family: arial;
-font-size: 20px;
-}
 
-/*============*\
-#    HEADER    #======================================================================
-\*============*/
-header{
-    display:flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content:space-between;
-    background-color: white;
-
-}
-
-.img_logo{
-  width: 14rem;
-}
-
-/*=================*\
-#    BURGER MENU    #======================================================================
-\*=================*/
-
-#menu a
-{
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-#menu a:hover
-{
-  color: black;
-}
-
-
-#menuToggle input
-{
-	display: block;
-	width: 40px;
-	height: 32px;
-	position: absolute;
-	top: 41px;
-	left: 76px;
-	cursor: pointer;
-	opacity: 0;
-	z-index: 2;
-}
-
-
-#menuToggle span{
-	display: block;
-	width: 33px;
-	height: 4px;
-	margin-bottom: 5px;
-	position: relative;
-	margin-left: 5rem;
-
-
-	background-color: #FF5A5F;
-	border-radius: 3px;
-
-	z-index: 1;
-
-	transform-origin: 4px 0px;
-
-	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-	transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-	transform-origin: 0% 100%;
-}
-
-
-#menuToggle input:checked ~ span
-{
-	opacity: 1;
-	transform: rotate(45deg) translate(-2px, -1px);
-	background: white;
-}
-
-#menuToggle input:checked ~ input{
-	opacity: 1;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-	opacity: 0;
-	transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-	transform: rotate(-45deg) translate(0, -1px);
-}
-
-
-#menu
-{
-	position: absolute;
-	width: 240px;
-	margin: 0px 0 0 -50px;
-	padding: 75px 50px 50px 75px ;
-	border-radius: 25px;
-
-	background: #FF5A5F;
-	list-style-type: none;
-
-	transform-origin: 0% 0%;
-	transform: translate(-100%, 0);
-
-	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-	top:47px;
-}
-
-#menu li
-{
-	font-family: Moon_2;
-	padding: 0px 20px;
-	margin-bottom: 30px;
-	font-size: 30px;
-}
-
-#menuToggle input:checked ~ ul
-{
-	transform: none;
-}
 
 /*=========*\
 #    BODY    #======================================================================
@@ -196,7 +59,7 @@ form{
   border:0;
 }
 
-input{
+input:not(#check){
   margin-bottom: 1rem;
   width: 100% !important;
   font-size: 1rem;
@@ -218,4 +81,8 @@ label{
 
 #where{
   width: 61% !important;
+}
+
+#compte:hover{
+  cursor:pointer;
 }

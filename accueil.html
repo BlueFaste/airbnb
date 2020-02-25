@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>Accueil</title>
   </head>
   <body>
     <header>
@@ -13,7 +14,7 @@
           <nav role="navigation">
             <div id="menuToggle">
 
-            <input type="checkbox" />
+            <input type="checkbox"  id="check"/>
 
               <span></span>
               <span></span>
@@ -38,13 +39,14 @@
         </div>
 
         <div>
-          <img src="img/user.svg" alt="compte" style="width:2rem; margin-right:2rem;"/>
+          <img src="img/user.svg" alt="compte" style="width:2rem; margin-right:2rem;" id="compte_deco">
+          <img src="img/users_co.svg" alt="compte" style="width:2rem; margin-right:2rem; display:none;" id="compte_co"/>
         </div>
       </header>
       	<div class="image" style="background-image: url(img/img_accueil.jpg)">
           <div class="formulaire">
             <h2> Réservez des logements, des hôtels et plus encore sur Airbnb</h2>
-            <form>
+            <form method="POST">
               <label for="where"> Où</label><br/>
               <input type="text" name="where" id="where" placeholder="Partout"/>
               <div class="date">
@@ -99,9 +101,47 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
         <script type="text/javascript">
           $(document).ready(function(){
+            $('#bouton').on('click',function(){
+              var lieu=$('#where').val();
+              var date_arr=$('#dae_arrive').val();
+              var date_dep=$('#date_depart').val();
+              var nb_adu=$('#adulte').val();
+              var nb_enf=$('enfant').val();
+              $.ajax({
+                url:'traitement.php',
+                type: 'POST',
+                data:{
+                  lieu:lieu,
+                  date_arr:date_arr,
+                  date_dep:date_dep,
+                  nb_adu:nb_adu,
+                  nb_enf:nb_enf
+                },
+                dataType:'html',
+                success:function(code_html,status){
+                  if(code_html=="no"){
+                    <!-- alert('non'); -->
+                    $("#where").attr("placeholder","Rentrer soit paris soit marseille")
+                  }
+                  else{
+                    window.location.assign(code_html);
+                    }
+                }
+              })
+              return false;
+            })
 
 
+
+            $("#compte_deco").on('click',function(){
+              $('#compte_deco').toggle();
+              $('#compte_co').toggle();
+            }),
+            $("#compte_co").on('click',function(){
+              $('#compte_deco').toggle();
+              $('#compte_co').toggle();
           })
+        })
 
         </script>
 
