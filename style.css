@@ -1,20 +1,32 @@
-.header{
+html{
+font-family: arial;
+font-size: 20px;
+}
+
+/*============*\
+#    HEADER    #======================================================================
+\*============*/
+header{
     display:flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
+    background-color: white;
+
 }
-.logo{
-	width: 15rem;
-	cursor: pointer;
-	margin-left: 250px;
+
+.img_logo{
+  width: 14rem;
 }
+
+/*=================*\
+#    BURGER MENU    #======================================================================
+\*=================*/
 
 #menu a
 {
   text-decoration: none;
   color: white;
-
   transition: color 0.3s ease;
 }
 
@@ -30,8 +42,8 @@
 	width: 40px;
 	height: 32px;
 	position: absolute;
-	top: 82px;
-	left: 55px;
+	top: 41px;
+	left: 76px;
 	cursor: pointer;
 	opacity: 0;
 	z-index: 2;
@@ -98,11 +110,11 @@
 {
 	position: absolute;
 	width: 240px;
-	margin: 20px 0 0 -50px;
+	margin: 0px 0 0 -50px;
 	padding: 75px 50px 50px 75px ;
 	border-radius: 25px;
 
-	background: #F88F58;
+	background: #FF5A5F;
 	list-style-type: none;
 
 	transform-origin: 0% 0%;
@@ -124,29 +136,86 @@
 {
 	transform: none;
 }
-.left{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
+
+/*=========*\
+#    BODY    #======================================================================
+\*=========*/
+
+.image{
+    flex: 0 0 auto;
+    background:no-repeat center center #FF5A5F;
+    background-size: cover;
+    width: 100% ;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.formulaire{
+  background-color: white;
+  border-radius: 1rem;
+  width: 25%;
+  margin: 5rem;
+  padding: 2rem;
 
 }
-.right{
-    display:flex;
-    flex-wrap:nowrap;
-    justify-content: flex-end;
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  font-size: 16px;
+}
+
+#adulte, #enfant{
+  width: 100%;
+  margin:0 0rem;
+  /* padding: 0 1rem; */
+}
+
+.champ, .champ_enf, .champ_dep{
+  display:flex;
+  flex-direction: column;
+}
+
+.champ_enf, .champ_dep{
+  margin-left: 1rem;
+}
+.who,.date{
+  display: flex;
+}
+
+#bouton{
+  background-color: #FF5A5F;
+  border-radius: 10px;
+  margin-top:1rem;
+  padding:1rem;
+  width: 100%;
+  display:block;
+  color:white;
+  border:0;
+}
+
+input{
+  margin-bottom: 1rem;
+  width: 100% !important;
+  font-size: 1rem;
+  border-radius: 3px;
+  border:1px solid #F2F2F2;
 
 }
-.moncompte{
-    display: flex;
-	align-items: center;
-    background-color: white;
-    color: black;
-    border-radius: 1rem;
-    text-decoration: none;
-	padding: 1rem;
-	font-size: 2rem;
-	margin-right:5em;
-	margin-bottom: 1em;
-	font-family: Verdana;
+
+select{
+  width: 110% !important;
+  border-radius: 3px;
+  border:1px solid #F2F2F2;
+
+}
+
+label{
+  padding-bottom:1rem;
+}
+
+#where{
+  width: 61% !important;
 }

@@ -8,50 +8,102 @@
   </head>
   <body>
     <header>
-      <header>
 
-        <div class="header">
-          <div class="left">
-            <!--<div id="burgermenu"></div>-->
-            <nav role="navigation">
-              <div id="menuToggle">
+          <div class="navi">
+          <nav role="navigation">
+            <div id="menuToggle">
 
-              <input type="checkbox" />
+            <input type="checkbox" />
 
-                <span></span>
-                <span></span>
-                <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
 
-              <ul id="menu">
-                <a href="#"><li>Chien</li></a>
-                <a href="#"><li>Chat</li></a>
-                <a href="#"><li>Rongeur</li></a>
-                <a href="#"><li>Oiseau</li></a>
-                <a href="#"><li>Cheval / Âne</li></a>
-                <a href="#"><li>Reptile</li></a>
-                <a href="#"><li>Discussion</li></a>
+            <ul id="menu">
+              <a href="#"><li>Chien</li></a>
+              <a href="#"><li>Chat</li></a>
+              <a href="#"><li>Rongeur</li></a>
+              <a href="#"><li>Oiseau</li></a>
+              <a href="#"><li>Cheval / Âne</li></a>
+              <a href="#"><li>Reptile</li></a>
+              <a href="#"><li>Discussion</li></a>
 
-              </ul>
-              </div>
-            </nav>
-
-            <h1  class="logo"><a href="Accueil.html" target="_self"><img src="Images/Header/Couleur.svg" alt="Site de partage communautaire sur les animaux, Tiertrick"/></a></h1>
-          </div>
-
-          <div class="right">
-
-            <div class="moncompte">
-
+            </ul>
             </div>
-
-
-          </div>
+          </nav>
         </div>
 
+        <div>
+          <h1  class="logo"><a href="accueil.html" target="_self"><img src="img/airbnb_logo.png" alt="airbnb_logo" class="img_logo"/></a></h1>
+        </div>
 
-
-
+        <div>
+          <img src="img/user.svg" alt="compte" style="width:2rem; margin-right:2rem;"/>
+        </div>
       </header>
-    </header>
+      	<div class="image" style="background-image: url(img/img_accueil.jpg)">
+          <div class="formulaire">
+            <h2> Réservez des logements, des hôtels et plus encore sur Airbnb</h2>
+            <form>
+              <label for="where"> Où</label><br/>
+              <input type="text" name="where" id="where" placeholder="Partout"/>
+              <div class="date">
+                <div class="champ">
+                <label for="arrive"> Arrivée</label>
+                <input type="date" name="date_arrive" id="date_arrive"/>
+                </div>
+                <div class="champ_dep">
+                <label for="depart"> Départ </label>
+                <input type="date" name="date_depart" id="date_depart">
+                </div>
+              </div>
+                <div class='who'>
+                  <div class="champ">
+                    <label for="adulte">Adultes</label>
+                    <select id="adulte" name="adulte">
+                      <option value="0">0 mais c'est chaud</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+                  <div class="champ_enf">
+                    <label for="enfant">Enfants</label>
+                    <select id="enfant" name="enfant">
+                      <option value="0">0 et c'est très bien</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+                </div>
+                <input type="submit" value="Rechercher" id="bouton">
+              </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+
+
+          })
+
+        </script>
+
   </body>
 </html>
