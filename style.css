@@ -15,7 +15,6 @@
 
 .formulaire{
   background-color: white;
-  /* background-image: url(img/fond_paris.jpg); */
   border-radius: 1rem;
   width: 25%;
   margin: 5rem;
@@ -60,7 +59,7 @@ form{
   border:0;
 }
 
-input:not(#check){
+input:not(#check):not(.sub-jsp){
   margin-bottom: 1rem;
   width: 100% !important;
   font-size: 1rem;
@@ -86,4 +85,21 @@ label{
 
 #compte:hover{
   cursor:pointer;
+}
+
+.submit{
+  display: flex;
+  justify-content: space-around;
+}
+
+.sub-jsp{
+  background-color: white;
+  padding: 1rem 6rem;
+  border: solid 1px #707070;
+  border-radius: 0.8rem;
+}
+
+.img_vac{
+  width: 90%;
+  margin: 0 auto;
 }
