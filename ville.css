@@ -1,9 +1,10 @@
-#selectable .ui-selecting { background: #FECA40; }
-#selectable .ui-selected { background: #F39814; color: white; }
+#selectable .ui-selecting { background: #6eadff; }
+#selectable .ui-selected { background: #3d90fc; color: white; }
 
 .filtre{
 display:flex;
 list-style-type: none;
+
 }
 
 .filtre li{
@@ -11,6 +12,7 @@ list-style-type: none;
   margin-right: 1rem;
   border:2px solid #707070;
   border-radius: 1rem;
+  cursor:pointer;
 }
 
 .img_paris{
