@@ -101,5 +101,39 @@ label{
 
 .img_vac{
   width: 90%;
+  margin: 3rem 5%;
+  border-radius: 1rem;
+}
+
+.pres-pays{
+  display: flex;
+  margin-left: 3%;
+}
+.div-pres-pays{
+  margin: 2%;
+}
+
+.img_pays{
+  width: 300px;
+  height: 425px;
+}
+
+.content{
   margin: 0 auto;
+}
+
+.content h3, .content h4,.content>p, .content a{
+  margin-left: 5%;
+}
+
+a{
+  color:black;
+  font-weight: bold;
+}
+
+.next{
+  transform-origin: center;
+  transform: rotate(90deg);
+  width: 2rem;
+  margin:0 48%;
 }

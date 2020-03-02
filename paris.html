@@ -4,7 +4,15 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="paris.css">
+    <link rel="stylesheet" href="ville.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $( function() {
+      $( "#selectable" ).selectable();
+    } );
+    </script>
     <title>Paris</title>
   </head>
   <body>
@@ -44,7 +52,7 @@
         </div>
       </header>
 
-      <ul class="filtre">
+      <ul class="filtre" id="selectable">
         <li class="">Dates</li>
         <li class="">Voyageurs</li>
         <li class="">Prix</li>
@@ -53,7 +61,7 @@
         <li class="">Niveau d'activité physique</li>
       </ul>
 
-      <img src="img/fond_paris.jpg" style="width:100%;"/>
+      <img src="img/fond_paris.jpg" style="width:100%;" alt="paris"/>
       <div class="content">
         <h3> Aventure près de chez vous</h3>
         <p> Découvrez des voyages préparés par des hôtes qui s’occupent de toute la logistique pour vous </p>

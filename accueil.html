@@ -5,6 +5,77 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> <!-- pour l'autocomplete-->
+    <link rel="stylesheet" href="/resources/demos/style.css"> <!-- pour l'autocomplete-->
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#bouton').on('click',function(){
+          var lieu=$('#where').val();
+          var date_arr=$('#dae_arrive').val();
+          var date_dep=$('#date_depart').val();
+          var nb_adu=$('#adulte').val();
+          var nb_enf=$('enfant').val();
+          $.ajax({
+            url:'traitement.php',
+            type: 'POST',
+            data:{
+              lieu:lieu,
+              date_arr:date_arr,
+              date_dep:date_dep,
+              nb_adu:nb_adu,
+              nb_enf:nb_enf
+            },
+            dataType:'html',
+            success:function(code_html,status){
+              if(code_html=="no"){
+                <!-- alert('non'); -->
+                $("#where").attr("placeholder","Rentrer soit paris soit marseille").val("");
+              }
+              else{
+                window.location.assign(code_html);
+                }
+            }
+          })
+          return false;
+        })
+
+        $("#compte_deco").on('click',function(){
+          $('#compte_deco').toggle();
+          $('#compte_co').toggle();
+        }),
+        $("#compte_co").on('click',function(){
+          $('#compte_deco').toggle();
+          $('#compte_co').toggle();
+      })
+    })
+
+    $( function() { //permet de choisir l'ordre sur la page
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    } );
+
+    $( function() { //autocomplete
+      var availableTags = [
+      "paris",
+      "marseille",
+      "toulouse",
+      "lion",
+      "lille",
+      "nice",
+      "nantes",
+      "strabourg",
+      "toulon"
+      ];
+    $( "#where" ).autocomplete({
+      source: availableTags
+      });
+
+    });
+
+    </script>
     <title>Accueil</title>
   </head>
   <body>
@@ -43,6 +114,7 @@
           <img src="img/users_co.svg" alt="compte" style="width:2rem; margin-right:2rem; display:none;" id="compte_co"/>
         </div>
       </header>
+
       	<div class="image" style="background-image: url(img/img_accueil.jpg)">
           <div class="formulaire">
             <h2> Réservez des logements, des hôtels et plus encore sur Airbnb</h2>
@@ -98,63 +170,50 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $('#bouton').on('click',function(){
-              var lieu=$('#where').val();
-              var date_arr=$('#dae_arrive').val();
-              var date_dep=$('#date_depart').val();
-              var nb_adu=$('#adulte').val();
-              var nb_enf=$('enfant').val();
-              $.ajax({
-                url:'traitement.php',
-                type: 'POST',
-                data:{
-                  lieu:lieu,
-                  date_arr:date_arr,
-                  date_dep:date_dep,
-                  nb_adu:nb_adu,
-                  nb_enf:nb_enf
-                },
-                dataType:'html',
-                success:function(code_html,status){
-                  if(code_html=="no"){
-                    <!-- alert('non'); -->
-                    $("#where").attr("placeholder","Rentrer soit paris soit marseille")
-                  }
-                  else{
-                    window.location.assign(code_html);
-                    }
-                }
-              })
-              return false;
-            })
 
-
-
-            $("#compte_deco").on('click',function(){
-              $('#compte_deco').toggle();
-              $('#compte_co').toggle();
-            }),
-            $("#compte_co").on('click',function(){
-              $('#compte_deco').toggle();
-              $('#compte_co').toggle();
-          })
-        })
-
-        </script>
-
-        <div>
+        <div class="content">
           <h3> Explore AIRBNB </h3>
           <div class="submit">
             <input type="submit" name="" value="Logements" class="sub-jsp"/>
             <input type="submit" name="" value="Expériences" class="sub-jsp"/>
             <input type="submit" name="" value="Aventures" class="sub-jsp"/>
           </div>
-          <img src="img/vacances.png" alt="" class="img_vac">
+          <img src="img/vacances.png" alt="arbnb vacances au soleil" class="img_vac">
+          <h3>Découvrez les aventures AIRBNB</h3>
+          <p> Voyages de plusieurs jours organisés par des experts locaux avec des activités, repas et logements compris.</p>
 
+          <div class="pres-pays" id="sortable">
+            <div class="div-pres-pays">
+              <img src="img/desert.jpg" alt="desert du maroc" class="img_pays">
+              <h4 class="pays"> Maroc </h4>
+              <p>Aventure active et séjour avec les locaux  </p>
+
+            </div>
+            <div class="div-pres-pays">
+              <img src="img/bateau.jpg" alt="bateau dans Tuscany" class="img_pays">
+              <h4 class="pays"> Italie</h4>
+              <p>Walking in Leonardo’s Tuscany </p>
+
+            </div>
+            <div class="div-pres-pays">
+              <img src="img/elephant.jpg" alt="elephant du kenya" class="img_pays">
+              <h4 class="pays"> Kenya</h4>
+              <p>Shimba Hills Coastal Rainforest Safari </p>
+
+            </div>
+            <div class="div-pres-pays">
+              <img src="img/train.jpg" alt="train au sri lanka" class="img_pays">
+              <h4 class="pays"> Sri Lanka</h4>
+              <p>Camping sauvage au Sri Lanka </p>
+
+            </div>
+          </div>
+
+          <a href=" ">Afficher toutes les aventures</a>
+          <br/>
+          <img src="img/next.png" alt="next" class="next">
         </div>
+
 
   </body>
 </html>

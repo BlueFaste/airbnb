@@ -4,6 +4,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="ville.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $( function() {
+      $( "#selectable" ).selectable();
+    } );
+</script>
     <title>Marseille</title>
   </head>
   <body>
@@ -42,3 +54,43 @@
           <img src="img/users_co.svg" alt="compte" style="width:2rem; margin-right:2rem; display:none;" id="compte_co"/>
         </div>
       </header>
+
+      <ul class="filtre" id="selectable">
+        <li class="">Dates</li>
+        <li class="">Voyageurs</li>
+        <li class="">Prix</li>
+        <li class="">Durée du voyage</li>
+        <li class="">Langues proposées</li>
+        <li class="">Niveau d'activité physique</li>
+      </ul>
+
+      <img src="img/fond_marseille.jpg" style="width:100%;" alt="paris"/>
+      <div class="content">
+        <h3> Aventure près de chez vous</h3>
+        <p> Découvrez des voyages préparés par des hôtes qui s’occupent de toute la logistique pour vous </p>
+        <div class="appart">
+          <div class="left">
+            <div>
+              <div class="img_paris" style="background-image:url(img/marseille_1)"></div>
+              <p class="text">Le temps d’un week-end vous allez pouvoir découvrir certaines richesses qui entoure la capitale le temps d’une randonnée à vélo. Les fôrets, châteaux et sites touristiques sont à portée de roue.</p>
+            </div>
+            <div>
+              <div class="img_paris" style="background-image:url(img/marseille_2)"></div>
+              <p class="text">La tour Eiffel Écouter est une tour de fer puddlé de 324 mètres de hauteur (avec antennes) située à Paris. Construite par Gustave Eiffel et ses collaborateurs pour l’Exposition universelle de Paris de 1889, et initialement nommée « tour de 300 mètres », ce monument est devenu le symbole de la capitale française</p>
+            </div>
+            <div>
+              <div class="img_paris" style="background-image:url(img/marseille_3)"></div>
+              <p class="text">Une préfiguration du musée du Louvre est imaginée en 1775-1776 par le comte d’Angivillier, directeur général des Bâtiments du roi, comme lieu de présentation des chefs-d’œuvre de la collection de la Couronne.</p>
+            </div>
+            <div>
+              <div class="img_paris" style="background-image:url(img/marseille_1)"></div>
+              <p class="text">Paris comporte 37 ponts au-dessus de
+  la Seine. Cinq sont accessibles uniquement aux piétons, deux sont des ponts ferroviaires et deux comportent un étage ferroviaire et un étage pour la circulation automobile. Quatre relient l’Île Saint-Louis à l’une des rives, huit l’Île de la Cité et un relie les deux îles entre elles. La liste suivante recense ces ponts, d’amont en aval du fleuve, donc du sud-est vers le sud-ouest de la ville.</p>
+            </div>
+
+          </div>
+          <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46481.7011523366!2d5.371362687538905!3d43.270148328812716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c72bb410d92b%3A0xf67f5b35e4312b5!2sLe%20Rhul!5e0!3m2!1sfr!2sfr!4v1583147586772!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>

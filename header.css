@@ -141,3 +141,7 @@ header{
 {
 	transform: none;
 }
+
+#compte_co, #compte_deco{
+  cursor: pointer;
+}
